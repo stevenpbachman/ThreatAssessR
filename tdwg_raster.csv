@@ -1,0 +1,370 @@
+VALUE	LEVEL3_NAM
+2	Afghanistan
+6	Alabama
+20	Alaska
+7	Albania
+1	Alberta
+8	Aldabra
+11	Aleutian Is.
+9	Algeria
+10	Altay
+21	Amsterdam-St.Paul Is.
+12	Amur
+13	Andaman Is.
+14	Angola
+15	Antarctica
+23	Antipodean Is.
+3	Argentina Northeast
+5	Argentina Northwest
+4	Argentina South
+16	Arizona
+17	Arkansas
+18	Aruba
+19	Ascension
+22	Assam
+24	Austria
+25	Azores
+26	Bahamas
+27	Baleares
+35	Baltic States
+28	Bangladesh
+34	Belarus
+31	Belgium
+36	Belize
+29	Benin
+30	Bermuda
+32	Bismarck Archipelago
+37	Bolivia
+38	Borneo
+39	Botswana
+40	Bouvet I.
+48	Brazil North
+46	Brazil Northeast
+49	Brazil South
+47	Brazil Southeast
+45	Brazil West-Central
+41	British Columbia
+43	Bulgaria
+33	Burkina
+44	Burundi
+42	Buryatiya
+80	C. American Pacific Is.
+50	Cabinda
+52	California
+54	Cambodia
+71	Cameroon
+73	Canary Is.
+81	Cape Provinces
+88	Cape Verde
+82	Caprivi Strip
+83	Caroline Is.
+53	Cayman Is.
+51	Central African Republic
+275	Central European Russia
+56	Chad
+55	Chagos Archipelago
+86	Chatham Is.
+67	Chile Central
+69	Chile North
+70	Chile South
+61	China North-Central
+57	China South-Central
+63	China Southeast
+85	Chita
+362	Christmas I.
+66	Cocos (Keeling) I.
+68	Colombia
+74	Colorado
+75	Comoros
+76	Congo
+72	Connecticut
+77	Cook Is.
+78	Corse
+79	Costa Rica
+84	Crozet Is.
+87	Cuba
+89	Cyprus
+90	Czechoslovakia
+91	Delaware
+92	Denmark
+95	Desventurados Is.
+354	District of Columbia
+93	Djibouti
+94	Dominican Republic
+96	East Aegean Is.
+276	East European Russia
+100	East Himalaya
+97	Easter Is.
+98	Ecuador
+99	Egypt
+101	El Salvador
+102	Equatorial Guinea
+103	Eritrea
+104	Ethiopia
+109	Føroyar
+105	Falkland Is.
+106	Fiji
+107	Finland
+108	Florida
+110	France
+248	Free State
+111	French Guiana
+112	Gabon
+113	Galápagos
+114	Gambia, The
+115	Georgia
+116	Germany
+118	Ghana
+119	Gilbert Is.
+122	Great Britain
+123	Greece
+121	Greenland
+125	Guatemala
+126	Guinea
+120	Guinea-Bissau
+117	Gulf of Guinea Is.
+124	Gulf States
+127	Guyana
+58	Hainan
+128	Haiti
+129	Hawaii
+131	Heard-McDonald Is.
+132	Honduras
+130	Howland-Baker Is.
+133	Hungary
+134	Iceland
+135	Idaho
+136	Illinois
+137	India
+138	Indiana
+59	Inner Mongolia
+139	Iowa
+142	Iran
+143	Iraq
+140	Ireland
+141	Irkutsk
+144	Italy
+145	Ivory Coast
+146	Jamaica
+147	Japan
+148	Jawa
+149	Juan Fernández Is.
+150	Kamchatka
+151	Kansas
+152	Kazakhstan
+165	Kazan-retto
+162	Kentucky
+154	Kenya
+153	Kerguelen
+155	Kermadec Is.
+157	Khabarovsk
+156	Kirgizistan
+158	Korea
+159	Krasnoyarsk
+160	Kriti
+161	Krym
+163	Kuril Is.
+164	Kuwait
+215	KwaZulu-Natal
+166	Labrador
+171	Laccadive Is.
+167	Laos
+169	Lebanon-Syria
+172	Leeward Is. AB Ant
+173	Lesotho
+176	Lesser Sunda Is.
+168	Liberia
+170	Libya
+174	Line Is.
+175	Louisiana
+180	Macquarie Is.
+185	Madagascar
+186	Madeira
+177	Magadan
+178	Maine
+191	Malawi
+192	Malaya
+187	Maldives
+190	Mali
+194	Maluku
+60	Manchuria
+179	Manitoba
+184	Marcus I.
+199	Marianas
+198	Marion-Prince Edward Is.
+200	Marquesas
+201	Marshall Is.
+202	Maryland
+181	Massachusetts
+205	Mauritania
+182	Mauritius
+209	Mexican Pacific Is.
+206	Mexico Central
+208	Mexico Gulf
+207	Mexico Northeast
+210	Mexico Northwest
+212	Mexico Southeast
+211	Mexico Southwest
+188	Michigan
+189	Minnesota
+203	Mississippi
+204	Missouri
+195	Mongolia
+193	Montana
+196	Morocco
+197	Mozambique
+183	Mozambique Channel Is.
+213	Myanmar
+214	Namibia
+231	Nansei-shoto
+233	Nauru
+221	Nebraska
+222	Nepal
+223	Netherlands
+230	Netherlands Antilles
+224	Nevada
+216	New Brunswick
+239	New Caledonia
+240	New Guinea
+241	New Hampshire
+242	New Jersey
+243	New Mexico
+235	New South Wales
+245	New York
+246	New Zealand North
+247	New Zealand South
+226	Newfoundland
+229	Nicaragua
+218	Nicobar Is.
+228	Niger
+227	Nigeria
+237	Niue
+225	Norfolk Is.
+217	North Carolina
+219	North Caucasus
+220	North Dakota
+277	North European Russia
+336	Northern Provinces
+236	Northern Territory
+279	Northwest European Russia
+244	Northwest Territories
+232	Norway
+234	Nova Scotia
+238	Nunavut
+249	Ogasawara-shoto
+250	Ohio
+251	Oklahoma
+252	Oman
+253	Ontario
+254	Oregon
+255	Pakistan
+256	Palestine
+257	Panama
+258	Paraguay
+260	Pennsylvania
+261	Peru
+262	Philippines
+263	Phoenix Is.
+264	Pitcairn Is.
+265	Poland
+266	Portugal
+267	Primorye
+259	Prince Edward I.
+268	Puerto Rico
+62	Qinghai
+270	Québec
+269	Queensland
+271	Réunion
+272	Rhode I.
+273	Rodrigues
+274	Romania
+280	Rwanda
+281	Sakhalin
+282	Samoa
+289	Santa Cruz Is.
+283	Sardegna
+284	Saskatchewan
+285	Saudi Arabia
+291	Selvagens
+292	Senegal
+293	Seychelles
+295	Sicilia
+296	Sierra Leone
+297	Sinai
+287	Society Is.
+299	Socotra
+300	Solomon Is.
+301	Somalia
+298	South Australia
+286	South Carolina
+288	South China Sea
+290	South Dakota
+278	South European Russia
+294	South Georgia
+304	South Sandwich Is.
+311	Southwest Caribbean
+302	Spain
+303	Sri Lanka
+305	St.Helena
+306	Sudan
+307	Sulawesi
+308	Sumatera
+309	Surinam
+310	Svalbard
+314	Swaziland
+312	Sweden
+313	Switzerland
+337	Tadzhikistan
+315	Taiwan
+316	Tanzania
+317	Tasmania
+321	Tennessee
+322	Texas
+323	Thailand
+64	Tibet
+325	Togo
+326	Tokelau-Manihiki
+327	Tonga
+319	Transcaucasus
+328	Trinidad-Tobago
+320	Tristan da Cunha
+329	Tuamotu
+330	Tubuai Is.
+332	Tunisia
+333	Turkey
+331	Turkey-in-Europe
+324	Turkmenistan
+318	Turks-Caicos Is.
+335	Tuva
+334	Tuvalu
+338	Uganda
+339	Ukraine
+340	Uruguay
+341	Utah
+342	Uzbekistan
+343	Vanuatu
+344	Venezuela
+348	Venezuelan Antilles
+345	Vermont
+346	Victoria
+347	Vietnam
+349	Virginia
+350	Wake I.
+351	Wallis-Futuna Is.
+352	Washington
+355	West Himalaya
+359	West Siberia
+360	West Virginia
+353	Western Australia
+358	Western Sahara
+356	Windward Is.
+357	Wisconsin
+361	Wyoming
+65	Xinjiang
+363	Yakutskiya
+364	Yemen
+365	Yugoslavia
+366	Yukon
+367	Zaïre
+368	Zambia
+369	Zimbabwe
