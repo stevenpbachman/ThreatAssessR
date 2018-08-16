@@ -3,4 +3,4 @@ Tool to predict threat status of plants and generate full Red List assessments f
 
 # How to run:
 
-Open 01a_Get_RedList_variables.R
+Open 01b_FUNCTIONS_Get_RedList_variables and source on save. THis loads all the relevant libraries and functions
