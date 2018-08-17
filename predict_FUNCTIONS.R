@@ -1432,7 +1432,7 @@ ThreatAssess = function(full_name,ID_list,path,LC.points = FALSE,SIS.files = FAL
   # load first
   RedLeastRFmodel = readRDS("RedLeastRFmodel.rds")
   
-  import = randomForest::importance(RedLeastRFmodel$finalModel, scale = FALSE)
+  #import = randomForest::importance(RedLeastRFmodel$finalModel, scale = FALSE)
   # need to check that there is data for all variables first
   # create a separate results table to do the prediction on
   result.predict = result.table
@@ -1447,11 +1447,11 @@ ThreatAssess = function(full_name,ID_list,path,LC.points = FALSE,SIS.files = FAL
   
   # clean up table
   result.predict = result.predict[-1]
-  colnames(result.predict)[which(names(result.predict) == "fam_int")] = "fam"
-  result.predict$fam[which(is.na(result.predict$fam))] <- 9999
+  #colnames(result.predict)[which(names(result.predict) == "fam_int")] = "fam"
+  result.predict$fam_int[which(is.na(result.predict$fam_int))] <- 9999
   
   # match data types to training set
-  result.predict$fam = as.integer(result.predict$fam)
+  result.predict$fam_int = as.integer(result.predict$fam)
   result.predict$RecordCount = as.integer(result.predict$RecordCount)
   result.predict$TDWGCount = as.integer(result.predict$TDWGCount)  
   result.predict$EcoregionCount = as.integer(result.predict$EcoregionCount)
@@ -1482,13 +1482,16 @@ ThreatAssess = function(full_name,ID_list,path,LC.points = FALSE,SIS.files = FAL
   #reduce to just powo id and threat
   model_result.table = model_result.table[,c(2,21)]
   
+  # merge model result to original results with powo ID
   model_res_merge = merge(model_result.table, result.table, by = "POWO_ID", copy = FALSE)
+  
+  # convert families in na_rows from fam_int to family text
+  na_rows_fam = merge(na_rows, fam, by = "fam_int")
+  na_rows_fam =   na_rows_fam[-1]
 
   # add the na_rows back in to get full results - add value for threat column?
-  combined = rbind(model_res_merge,na_rows)
-  
-  # change family back to name from integer?
-  
+  combined = rbind(model_res_merge,na_rows_fam)
+
   # save results
   save.results = write.table(combined,respath,row.names = FALSE,na = "",sep = ",")
   

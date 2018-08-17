@@ -24,8 +24,8 @@ path = paste0(getwd(),"/outputs/")
 example_species = read.csv("outputs/example_species.csv")
 
 # get the family from Plants of the world online (POWO)
-family = "Arecaceae"
-powo.species = get.POWO(family)
+#family = "Arecaceae"
+#powo.species = get.POWO(family)
 
 # define full_name (binomial) and ID_list (IPNI ID)
 full_name = example_species[,4] # work through this sequence and save, might need to split into batches of 500 - 1000
