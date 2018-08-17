@@ -24,6 +24,7 @@ library(raster)
 library(jsonlite)
 library(devtools)
 library(pryr)
+library(CoordinateCleaner)
 
 ############### FUNCTIONS ##############
 
@@ -644,6 +645,15 @@ LC.gbif.points = function(gbifkey, result.tdwg) {
       'institutionCode'
     )
   )
+  
+  #res = cc_outl(x = res, lon = "decimalLongitude", 
+  #              lat = "decimalLatitude",
+  #              method = "distance", 
+  #              species = "scientificName",
+  #              mltpl = 3, 
+  #              tdi = 500, 
+  #              value = "clean", 
+  #              verbose = FALSE)
   return(res)
 }
 # 3.2 - clean the points so they are ready for TDWG raster
@@ -669,6 +679,23 @@ clean.points.df = function(points) {
     return(points.clean.df)
   }
 } # check if this needed
+
+# 3.4 - remove outliers using CoordinateCleaner package
+clean.outliers = function(points){
+  
+  outlier.clean = cc_outl(x =   points, lon = "decimalLongitude", 
+                          lat = "decimalLatitude",
+                          method = "distance", 
+                          species = "scientificName",
+                          mltpl = 3, 
+                          tdi = 250, 
+                          value = "clean", 
+                          verbose = FALSE)
+  }
+  
+
+
+
 
 # 4 - get TDWG values and clip points so that only native are being used - check native
 # 4.1  extract tdwg raster values
@@ -1260,6 +1287,8 @@ ThreatAssess = function(full_name,ID_list,path,LC.points = FALSE,SIS.files = FAL
     # get the points
     apply.points = lapply(small_gbifkeys, LC.gbif.points) #if GBIF keys exists....
     points = do.call(rbind.fill, apply.points)
+    
+    #apply.clean = apply(points, 1, clean.outliers)
   
     # add POWO_ID to points because POWO ID is the unique value. join points.with.tdwg to result.table.tdwg
     powo.ids = cbind(POWO_ID = result.table$POWO_ID, taxonKey = result.table$GBIF_SuggestedKey) %>% as.data.frame()
@@ -1336,6 +1365,9 @@ ThreatAssess = function(full_name,ID_list,path,LC.points = FALSE,SIS.files = FAL
       # get 'points out of range' errors and add them to result.table.errors, then leave clean list for final analysis
       PointsOutofRange.species = subset(result.table, (nchar(result.table$Warning) > 3))
       PointsInRange.species = subset(result.table, (nchar(result.table$Warning) < 3))
+      
+      # clean outliers
+      native_only = clean.outliers(native_only)
       
       # need to update result.table.errors here with points out of range
       if (nrow(PointsOutofRange.species) >= 1){

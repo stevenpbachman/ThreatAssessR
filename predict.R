@@ -31,6 +31,17 @@ example_species = read.csv("outputs/example_species.csv")
 full_name = example_species[,4] # work through this sequence and save, might need to split into batches of 500 - 1000
 ID_list = example_species[,7]
 
+# user details for IUCN point file and SIS csv outputs. These are required fields, but will be the same for all assessments
+Firstname = 'Steve'
+Lastname = 'Bachman'
+Email = 's.bachman@kew.org'
+Initials = 'S.P.'
+Affiliation = 'Royal Botanic Gardens, Kew'
+# point compiler needs to be specific format: last name, initial and affiliation
+pointcompiler = paste0(Lastname,", ",substr(Firstname,1,1),". (", Affiliation,")")
+pointcitation = Affiliation  
+credittype = 'Assessor'
+
 # Run ThreatAssessR
 t = proc.time()
 LC = ThreatAssess(full_name = full_name, ID_list = ID_list, LC.points = FALSE, SIS.files = FALSE, path = path)
