@@ -24,12 +24,13 @@ path = paste0(getwd(),"/outputs/")
 example_species = read.csv("outputs/example_species.csv")
 
 # get the family from Plants of the world online (POWO)
-#family = "Arecaceae"
-#powo.species = get.POWO(family)
+family = "Acanthaceae"
+powo.species = get.POWO(family)
 
 # define full_name (binomial) and ID_list (IPNI ID)
-full_name = example_species[,4] # work through this sequence and save, might need to split into batches of 500 - 1000
-ID_list = example_species[,7]
+full_name = powo.species[490:500,2] # work through this sequence and save, might need to split into batches of 500 - 1000
+ID_list = powo.species[490:500,4]
+
 
 # user details for IUCN point file and SIS csv outputs. These are required fields, but will be the same for all assessments
 Firstname = 'Steve'
@@ -47,6 +48,8 @@ t = proc.time()
 LC = ThreatAssess(full_name = full_name, ID_list = ID_list, LC.points = FALSE, SIS.files = FALSE, path = path)
 proc.time()- t
 
+path.b = paste0(path,"powo.csv")
+save.big.keys = write.table(powo.species,path.b,row.names = FALSE,na = "",sep = ",")
 
 
 

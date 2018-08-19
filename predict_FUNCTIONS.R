@@ -25,6 +25,9 @@ library(jsonlite)
 library(devtools)
 library(pryr)
 library(CoordinateCleaner)
+library(caret)
+library(randomForest)
+#install.packages("randomForest")
 
 ############### FUNCTIONS ##############
 
@@ -259,17 +262,19 @@ LC.gbif.tax = function (result.table.keys) {
   } else {
     # filter out NA
     # filter on key only - suggested key
-    gbif_nam_search = name_usage(result.table.keys, rank = 'family')
-    kin = gbif_nam_search$data$kingdom
-    phy = gbif_nam_search$data$phylum
-    ord = gbif_nam_search$data$order
-    fam = gbif_nam_search$data$family
-    GBIF_SuggestedGen = gbif_nam_search$data$genus
-    GBIF_SuggestedSpe = gbif_nam_search$data$species
-    GBIF_Suggestedauth = gbif_nam_search$data$authorship
-    GBIF_SuggestedNameStatus = gbif_nam_search$data$taxonomicStatus
-    GBIF_SuggestedKey = as.character(gbif_nam_search$data$key)
-    GBIF_AcceptedKey = as.character(gbif_nam_search$data$speciesKey)
+    gbif_nam_search = name_usage(result.table.keys, rank = 'SPECIES') # family?
+    #test = name_usage("5415448", rank = 'species')
+    data = gbif_nam_search$data[1,]
+    kin = data$kingdom
+    phy = data$phylum
+    ord = data$order
+    fam = data$family
+    GBIF_SuggestedGen = data$genus
+    GBIF_SuggestedSpe = data$species
+    GBIF_Suggestedauth = data$authorship
+    GBIF_SuggestedNameStatus = data$taxonomicStatus
+    GBIF_SuggestedKey = as.character(data$key)
+    GBIF_AcceptedKey = as.character(data$speciesKey)
     Warning = ""
     taxlist = data.frame(
       GBIF_SuggestedKey,
@@ -301,6 +306,13 @@ LC.get.keys.tax = function(full_name, ID_list) {
   result.keys = LC.get.keys(full_name) # 1 - lapply on gbif key and merge back to get results table which will be appended to later
   result.table.keys = cbind(ID_list, full_name, result.keys)
   result.tax = lapply(result.table.keys[, 3], LC.gbif.tax)
+  
+  #jointax = merge(result.table.keys, result.tax, all = TRUE)
+  #respath = paste0(path, "powo1000", ".csv")
+  #write.table(powo1000,respath,row.names = FALSE,na = "",sep = ",")
+  
+  
+  
   result.tax = do.call(bind_rows, result.tax)
   result.table.tax = cbind(ID_list, full_name, result.tax)
   colnames(result.table.tax)[which(names(result.table.tax) == "ID_list")] = "POWO_ID"
@@ -1276,7 +1288,7 @@ ThreatAssess = function(full_name,ID_list,path,LC.points = FALSE,SIS.files = FAL
     big_keys = subset(all_count, count_occs >200000) %>% as.data.frame() # change to whatever is the threshold e.g. 200,000?
     
     # if big_keys exists - print warning and save file
-    if (exists("big_keys")){
+    if (nrow(big_keys) >= 1){
       big_keys = big_keys[,2]
       path.big = paste0(path,"big_keys.csv")
       save.big.keys = write.table(big_keys,path.big,row.names = FALSE,na = "",sep = ",")
