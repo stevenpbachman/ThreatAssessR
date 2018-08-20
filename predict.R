@@ -23,6 +23,10 @@ path = paste0(getwd(),"/outputs/")
 # Read in test species as an example
 example_species = read.csv("outputs/example_species.csv")
 
+redlist2018 = read.csv("C:/Users/sb42kg/OneDrive - The Royal Botanic Gardens, Kew/02_Publications/spb/Machine learning - big data red list/05_R/03_Model_Predict/RedLeast_RedList_join_run_on_2018-08-17.csv")
+
+
+
 # get the family from Plants of the world online (POWO)
 #family = "Arecaceae"
 #powo.species = get.POWO(family)
