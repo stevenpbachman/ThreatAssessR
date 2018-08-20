@@ -262,7 +262,7 @@ LC.gbif.tax = function (result.table.keys) {
   } else {
     # filter out NA
     # filter on key only - suggested key
-    gbif_nam_search = name_usage(result.table.keys, rank = 'SPECIES') # family?
+    gbif_nam_search = name_usage(result.table.keys, rank = 'SPECIES') 
     #test = name_usage("5415448", rank = 'species')
     data = gbif_nam_search$data[1,]
     kin = data$kingdom
@@ -1530,7 +1530,7 @@ ThreatAssess = function(full_name,ID_list,path,LC.points = FALSE,SIS.files = FAL
   model_res_merge = merge(model_result.table, result.table, by = "POWO_ID", copy = FALSE)
   
   # convert families in na_rows from fam_int to family text
-  na_rows_fam = merge(na_rows, fam, by = "fam_int")
+  na_rows_fam = left_join(na_rows, fam, by = "fam_int")
   na_rows_fam =   na_rows_fam[-1]
 
   # add the na_rows back in to get full results - add value for threat column?

@@ -23,17 +23,17 @@ path = paste0(getwd(),"/outputs/")
 # Read in test species as an example
 example_species = read.csv("outputs/example_species.csv")
 
-redlist2018 = read.csv("C:/Users/sb42kg/OneDrive - The Royal Botanic Gardens, Kew/02_Publications/spb/Machine learning - big data red list/05_R/03_Model_Predict/RedLeast_RedList_join_run_on_2018-08-17.csv")
-
-
-
 # get the family from Plants of the world online (POWO)
-family = "Acanthaceae"
+family = "Araceae"
 powo.species = get.POWO(family)
 
 # define full_name (binomial) and ID_list (IPNI ID)
-full_name = powo.species[490:500,2] # work through this sequence and save, might need to split into batches of 500 - 1000
-ID_list = powo.species[490:500,4]
+full_name = powo.species[1501:2000,2] # work through this sequence and save, might need to split into batches of 500 - 1000
+ID_list = powo.species[1501:2000,4]
+
+# define full_name (binomial) and ID_list (IPNI ID)
+#full_name = example_species[,4] # work through this sequence and save, might need to split into batches of 500 - 1000
+#ID_list = example_species[,7]
 
 
 # user details for IUCN point file and SIS csv outputs. These are required fields, but will be the same for all assessments
@@ -52,9 +52,9 @@ t = proc.time()
 LC = ThreatAssess(full_name = full_name, ID_list = ID_list, LC.points = FALSE, SIS.files = FALSE, path = path)
 proc.time()- t
 
-path.b = paste0(path,"powo.csv")
-save.big.keys = write.table(powo.species,path.b,row.names = FALSE,na = "",sep = ",")
+#path.b = paste0(path,"powo.csv")
+#save.big.keys = write.table(powo.species,path.b,row.names = FALSE,na = "",sep = ",")
 
-
+warnings()
 
 
